@@ -1,0 +1,14 @@
+{
+	"Targets": [
+		{
+			"Name": "PruebaTecnica",
+			"Path": "E:\\Prueba Tecnica\\PruebaTecnica\\PruebaTecnica\\Source\\PruebaTecnica.Target.cs",
+			"Type": "Game"
+		},
+		{
+			"Name": "PruebaTecnicaEditor",
+			"Path": "E:\\Prueba Tecnica\\PruebaTecnica\\PruebaTecnica\\Source\\PruebaTecnicaEditor.Target.cs",
+			"Type": "Editor"
+		}
+	]
+}
