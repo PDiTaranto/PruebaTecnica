@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PruebaTecnica.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{F3B6CD3F-91A6-41C9-8257-5C8368C856D0}</UniqueIdentifier>
+      <UniqueIdentifier>{D60773A9-D116-42A3-8830-DEC1D3508AD4}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PruebaTecnica.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{ADD4A506-20A6-43FB-8077-762A771B6A60}</UniqueIdentifier>
+      <UniqueIdentifier>{30C3A38E-7BBD-4EF4-A512-2CDF1C95F088}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PruebaTecnica">
-      <UniqueIdentifier>{792B21DA-E10E-44E9-B8FD-93F1D3CF6BD9}</UniqueIdentifier>
+      <UniqueIdentifier>{956FFB67-75EE-4FD4-BC7D-903DBB477DA9}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PruebaTecnica\PruebaTecnica.Build.cs">
       <Filter>Source\PruebaTecnica</Filter>
@@ -64,6 +64,24 @@
     </ClCompile>
     <ClInclude Include="..\..\Source\PruebaTecnica\PruebaTecnicaProjectile.h">
       <Filter>Source\PruebaTecnica</Filter>
+    </ClInclude>
+    <Filter Include="Source\PruebaTecnica\Private">
+      <UniqueIdentifier>{0DFC2372-4857-4B1D-9AE0-C92C56C23C82}</UniqueIdentifier>
+    </Filter>
+    <ClCompile Include="..\..\Source\PruebaTecnica\Private\Enemy.cpp">
+      <Filter>Source\PruebaTecnica\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PruebaTecnica\Private\EnemyController.cpp">
+      <Filter>Source\PruebaTecnica\Private</Filter>
+    </ClCompile>
+    <Filter Include="Source\PruebaTecnica\Public">
+      <UniqueIdentifier>{14C39A64-0931-4675-B659-52CDEF41CA8B}</UniqueIdentifier>
+    </Filter>
+    <ClInclude Include="..\..\Source\PruebaTecnica\Public\Enemy.h">
+      <Filter>Source\PruebaTecnica\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PruebaTecnica\Public\EnemyController.h">
+      <Filter>Source\PruebaTecnica\Public</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
