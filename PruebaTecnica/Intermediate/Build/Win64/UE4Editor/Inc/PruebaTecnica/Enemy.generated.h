@@ -19,6 +19,7 @@ struct FHitResult;
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_13_SPARSE_DATA
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execTargetOnView); \
 	DECLARE_FUNCTION(execAttack); \
 	DECLARE_FUNCTION(execCombatSphereEndOverlap); \
 	DECLARE_FUNCTION(execCombatSphereOverlap); \
@@ -28,6 +29,7 @@ struct FHitResult;
 
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execTargetOnView); \
 	DECLARE_FUNCTION(execAttack); \
 	DECLARE_FUNCTION(execCombatSphereEndOverlap); \
 	DECLARE_FUNCTION(execCombatSphereOverlap); \

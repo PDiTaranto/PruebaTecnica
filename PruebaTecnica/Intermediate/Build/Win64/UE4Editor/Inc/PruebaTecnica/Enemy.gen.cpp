@@ -24,6 +24,13 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 	COREUOBJECT_API UScriptStruct* Z_Construct_UScriptStruct_FVector();
 	ENGINE_API UClass* Z_Construct_UClass_USphereComponent_NoRegister();
 // End Cross Module References
+	DEFINE_FUNCTION(AEnemy::execTargetOnView)
+	{
+		P_FINISH;
+		P_NATIVE_BEGIN;
+		P_THIS->TargetOnView();
+		P_NATIVE_END;
+	}
 	DEFINE_FUNCTION(AEnemy::execAttack)
 	{
 		P_FINISH;
@@ -88,6 +95,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 			{ "Attack", &AEnemy::execAttack },
 			{ "CombatSphereEndOverlap", &AEnemy::execCombatSphereEndOverlap },
 			{ "CombatSphereOverlap", &AEnemy::execCombatSphereOverlap },
+			{ "TargetOnView", &AEnemy::execTargetOnView },
 		};
 		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, UE_ARRAY_COUNT(Funcs));
 	}
@@ -395,6 +403,28 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		}
 		return ReturnFunction;
 	}
+	struct Z_Construct_UFunction_AEnemy_TargetOnView_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_AEnemy_TargetOnView_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "Public/Enemy.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_AEnemy_TargetOnView_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_AEnemy, nullptr, "TargetOnView", nullptr, nullptr, 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x04020400, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_AEnemy_TargetOnView_Statics::Function_MetaDataParams, UE_ARRAY_COUNT(Z_Construct_UFunction_AEnemy_TargetOnView_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_AEnemy_TargetOnView()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_AEnemy_TargetOnView_Statics::FuncParams);
+		}
+		return ReturnFunction;
+	}
 	UClass* Z_Construct_UClass_AEnemy_NoRegister()
 	{
 		return AEnemy::StaticClass();
@@ -440,6 +470,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		{ &Z_Construct_UFunction_AEnemy_Attack, "Attack" }, // 1307313135
 		{ &Z_Construct_UFunction_AEnemy_CombatSphereEndOverlap, "CombatSphereEndOverlap" }, // 4090048634
 		{ &Z_Construct_UFunction_AEnemy_CombatSphereOverlap, "CombatSphereOverlap" }, // 4258596927
+		{ &Z_Construct_UFunction_AEnemy_TargetOnView, "TargetOnView" }, // 1591348624
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_AEnemy_Statics::Class_MetaDataParams[] = {
@@ -526,7 +557,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemy() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemy, 2454206728);
+	IMPLEMENT_CLASS(AEnemy, 2759931179);
 	template<> PRUEBATECNICA_API UClass* StaticClass<AEnemy>()
 	{
 		return AEnemy::StaticClass();

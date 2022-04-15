@@ -73,7 +73,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyRange() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemyRange, 1926855523);
+	IMPLEMENT_CLASS(AEnemyRange, 2083310027);
 	template<> PRUEBATECNICA_API UClass* StaticClass<AEnemyRange>()
 	{
 		return AEnemyRange::StaticClass();

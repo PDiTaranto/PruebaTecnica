@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PruebaTecnica.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{2BDECA81-EC2E-44C6-B778-77A5A01CBA66}</UniqueIdentifier>
+      <UniqueIdentifier>{EAD2A31A-73C2-4280-8B65-FA95613603BB}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PruebaTecnica.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{08BF4868-97FD-49AB-855A-6ABF652E687F}</UniqueIdentifier>
+      <UniqueIdentifier>{F5B05317-9C9C-4082-8C12-6CC6D5665278}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PruebaTecnica">
-      <UniqueIdentifier>{8072E95C-70FF-46B8-B0E1-E32B869EBF41}</UniqueIdentifier>
+      <UniqueIdentifier>{64E5095A-9476-4093-BC3C-23BC1ADFCC1E}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PruebaTecnica\PruebaTecnica.Build.cs">
       <Filter>Source\PruebaTecnica</Filter>
@@ -66,7 +66,7 @@
       <Filter>Source\PruebaTecnica</Filter>
     </ClInclude>
     <Filter Include="Source\PruebaTecnica\Private">
-      <UniqueIdentifier>{768B796C-E84C-4F2F-ADA5-44B7B4A12C1D}</UniqueIdentifier>
+      <UniqueIdentifier>{40F01578-DFBA-4015-B056-EDCFA10C9DF4}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\PruebaTecnica\Private\Enemy.cpp">
       <Filter>Source\PruebaTecnica\Private</Filter>
@@ -78,7 +78,7 @@
       <Filter>Source\PruebaTecnica\Private</Filter>
     </ClCompile>
     <Filter Include="Source\PruebaTecnica\Public">
-      <UniqueIdentifier>{665FABB0-C596-49C7-8941-55F03CE2EAD6}</UniqueIdentifier>
+      <UniqueIdentifier>{DF21350B-8C92-4DEC-8C37-FA3215847726}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\PruebaTecnica\Public\Enemy.h">
       <Filter>Source\PruebaTecnica\Public</Filter>

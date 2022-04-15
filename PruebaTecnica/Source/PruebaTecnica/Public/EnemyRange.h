@@ -16,6 +16,7 @@ class PRUEBATECNICA_API AEnemyRange : public AEnemy
 
 public:
 	virtual void BeginPlay() override;
+	virtual void Tick(float DeltaTime) override;
 
 protected:
 	virtual void Attack() override;

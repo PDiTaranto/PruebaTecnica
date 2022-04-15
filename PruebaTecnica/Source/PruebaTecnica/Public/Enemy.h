@@ -80,6 +80,10 @@ public:
 	UFUNCTION(BlueprintCallable)
 	virtual void Attack();
 
+	UFUNCTION(BlueprintCallable)
+	virtual void TargetOnView();
+	
+
 	FORCEINLINE UBehaviorTree* GetBehaviorTree() const { return BehaviorTree; }
 
 };

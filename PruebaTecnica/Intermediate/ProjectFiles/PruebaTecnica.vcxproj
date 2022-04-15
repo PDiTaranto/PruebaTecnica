@@ -51,7 +51,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{0540D8FF-9B7A-487C-A10D-2AD4878B7492}</ProjectGuid>
+    <ProjectGuid>{1FB255D0-0DDF-48FC-882A-041AE28DDF15}</ProjectGuid>
     <Keyword>MakeFileProj</Keyword>
     <RootNamespace>PruebaTecnica</RootNamespace>
     <PlatformToolset>v142</PlatformToolset>
