@@ -17,7 +17,16 @@ AEnemy::AEnemy()
 
 	AgroSphere = CreateDefaultSubobject<USphereComponent>(TEXT("AgroSphere"));
 	AgroSphere->SetupAttachment(GetRootComponent());
+	
+	AgroSphere->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+	AgroSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Overlap);	
 
+	CombatSphere = CreateDefaultSubobject<USphereComponent>(TEXT("CombatSphere"));
+	CombatSphere->SetupAttachment(GetRootComponent());
+	
+	CombatSphere->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
+	CombatSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Overlap);
+	
 }
 
 // Called when the game starts or when spawned
@@ -28,6 +37,18 @@ void AEnemy::BeginPlay()
 	AgroSphere->OnComponentBeginOverlap.AddDynamic(
 		this,
 		&AEnemy::AgroSphereOverlap);
+
+	AgroSphere->OnComponentEndOverlap.AddDynamic(
+		this,
+		&AEnemy::AgroSphereEndOverlap);
+
+	CombatSphere->OnComponentBeginOverlap.AddDynamic(
+		this,
+		&AEnemy::CombatSphereOverlap);
+
+	CombatSphere->OnComponentEndOverlap.AddDynamic(
+		this,
+		&AEnemy::CombatSphereEndOverlap);
 
 	EnemyController = Cast<AEnemyController>(GetController());
 	
@@ -93,5 +114,51 @@ void AEnemy::AgroSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor*
 			TEXT("Target"),
 			Character);
 	}
+}
+
+void AEnemy::AgroSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if(OtherActor == nullptr) return;
+	auto Character = Cast<APruebaTecnicaCharacter>(OtherActor);
+	if(Character)
+	{
+		EnemyController->GetBlackboardComponent()->SetValueAsObject(
+			TEXT("Target"),
+			nullptr);
+	}
+}
+
+
+
+void AEnemy::CombatSphereOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
+{
+	if(OtherActor == nullptr) return;
+	auto Character = Cast<APruebaTecnicaCharacter>(OtherActor);
+	if(Character)
+	{
+		EnemyController->GetBlackboardComponent()->SetValueAsBool(
+			TEXT("TargetInRange"),
+			true);
+	}
+}
+
+void AEnemy::CombatSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor,
+	UPrimitiveComponent* OtherComp, int32 OtherBodyIndex)
+{
+	if(OtherActor == nullptr) return;
+	auto Character = Cast<APruebaTecnicaCharacter>(OtherActor);
+	if(Character)
+	{
+		EnemyController->GetBlackboardComponent()->SetValueAsBool(
+			TEXT("TargetInRange"),
+			false);
+	}
+}
+
+void AEnemy::Attack()
+{
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Attack"));
 }
 

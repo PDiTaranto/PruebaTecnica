@@ -19,11 +19,19 @@ struct FHitResult;
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_13_SPARSE_DATA
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_13_RPC_WRAPPERS \
  \
+	DECLARE_FUNCTION(execAttack); \
+	DECLARE_FUNCTION(execCombatSphereEndOverlap); \
+	DECLARE_FUNCTION(execCombatSphereOverlap); \
+	DECLARE_FUNCTION(execAgroSphereEndOverlap); \
 	DECLARE_FUNCTION(execAgroSphereOverlap);
 
 
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
  \
+	DECLARE_FUNCTION(execAttack); \
+	DECLARE_FUNCTION(execCombatSphereEndOverlap); \
+	DECLARE_FUNCTION(execCombatSphereOverlap); \
+	DECLARE_FUNCTION(execAgroSphereEndOverlap); \
 	DECLARE_FUNCTION(execAgroSphereOverlap);
 
 
@@ -73,7 +81,8 @@ public: \
 	FORCEINLINE static uint32 __PPO__BehaviorTree() { return STRUCT_OFFSET(AEnemy, BehaviorTree); } \
 	FORCEINLINE static uint32 __PPO__PatrolPoint() { return STRUCT_OFFSET(AEnemy, PatrolPoint); } \
 	FORCEINLINE static uint32 __PPO__PatrolPoint2() { return STRUCT_OFFSET(AEnemy, PatrolPoint2); } \
-	FORCEINLINE static uint32 __PPO__AgroSphere() { return STRUCT_OFFSET(AEnemy, AgroSphere); }
+	FORCEINLINE static uint32 __PPO__AgroSphere() { return STRUCT_OFFSET(AEnemy, AgroSphere); } \
+	FORCEINLINE static uint32 __PPO__CombatSphere() { return STRUCT_OFFSET(AEnemy, CombatSphere); }
 
 
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_10_PROLOG
