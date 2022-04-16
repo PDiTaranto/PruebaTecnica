@@ -1,0 +1,40 @@
+﻿  Using 'git status' to determine working set for adaptive non-unity build (E:\Prueba Tecnica\PruebaTecnica).
+  Creating makefile for PruebaTecnicaEditor (no existing makefile)
+  Parsing headers for PruebaTecnicaEditor
+    Running UnrealHeaderTool "E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\PruebaTecnica.uproject" "E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\PruebaTecnicaEditor\Development\PruebaTecnicaEditor.uhtmanifest" -LogCmds="loginit warning, logexit warning, logdatabase error" -Unattended -WarningsAsErrors -abslog="C:\Users\Pablo\AppData\Local\UnrealBuildTool\Log_UHT.txt" -installed
+  LogInit: Display: Loading text-based GConfig....
+  Reflection code generated for PruebaTecnicaEditor in 3.6529592 seconds
+  Building PruebaTecnicaEditor...
+  Using Visual Studio 2019 14.29.30140 toolchain (C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.29.30133) and Windows 10.0.19041.0 SDK (C:\Program Files (x86)\Windows Kits\10).
+  Building 27 actions with 12 processes...
+    [1/27] Default.rc2
+    [2/27] SharedPCH.Engine.ShadowErrors.cpp
+    [3/27] PruebaTecnica.cpp
+    [4/27] EnemyMelee.cpp
+    [5/27] EnemyRange.cpp
+    [6/27] Enemy.gen.cpp
+    [7/27] EnemyProjectile.cpp
+    [8/27] PruebaTecnicaHUD.cpp
+    [9/27] PruebaTecnicaGameMode.cpp
+    [10/27] PruebaTecnicaProjectile.cpp
+    [11/27] EnemyProjectile.gen.cpp
+    [12/27] PruebaTecnicaCharacter.cpp
+    [13/27] PruebaTecnica.init.gen.cpp
+    [14/27] EnemyRange.gen.cpp
+    [15/27] EnemyMelee.gen.cpp
+    [16/27] MainPlayerController.gen.cpp
+    [17/27] PruebaTecnicaGameMode.gen.cpp
+    [18/27] PruebaTecnicaCharacter.gen.cpp
+    [19/27] EnemyController.gen.cpp
+    [20/27] EnemyController.cpp
+    [21/27] Enemy.cpp
+    [22/27] PruebaTecnicaProjectile.gen.cpp
+    [23/27] PruebaTecnicaHUD.gen.cpp
+    [24/27] MainPlayerController.cpp
+    [25/27] UE4Editor-PruebaTecnica-0001.lib
+       Creating library E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Development\PruebaTecnica\UE4Editor-PruebaTecnica-0001.lib and object E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Development\PruebaTecnica\UE4Editor-PruebaTecnica-0001.exp
+    [26/27] UE4Editor-PruebaTecnica-0001.dll
+       Creating library E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Development\PruebaTecnica\UE4Editor-PruebaTecnica-0001.suppressed.lib and object E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Development\PruebaTecnica\UE4Editor-PruebaTecnica-0001.suppressed.exp
+    [27/27] PruebaTecnicaEditor.target
+  Total time in Parallel executor: 24.55 seconds
+  Total execution time: 31.42 seconds

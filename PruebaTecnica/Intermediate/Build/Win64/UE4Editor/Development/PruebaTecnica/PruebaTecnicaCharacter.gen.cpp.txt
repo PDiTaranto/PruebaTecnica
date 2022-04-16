@@ -1,0 +1,11 @@
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Development\PruebaTecnica\Definitions.PruebaTecnica.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Source\PruebaTecnica/PruebaTecnicaCharacter.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/Character.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/CharacterMovementReplication.h
+E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\CharacterMovementReplication.generated.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/RootMotionSource.h
+E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\RootMotionSource.generated.h
+E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\Character.generated.h
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Inc\PruebaTecnica\PruebaTecnicaCharacter.generated.h

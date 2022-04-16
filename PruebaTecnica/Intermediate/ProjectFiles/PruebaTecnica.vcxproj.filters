@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\PruebaTecnica.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{BB02AC3D-DC27-45B5-80D9-4F2A232EEF61}</UniqueIdentifier>
+      <UniqueIdentifier>{E2097E0F-57F1-435C-B90B-24A5A554811F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PruebaTecnica.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{8AB0A673-0E9E-4E73-ADA8-FB2C1B302F21}</UniqueIdentifier>
+      <UniqueIdentifier>{5894402B-7325-4CD6-A80B-D8C1C4B28D0B}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -30,7 +30,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\PruebaTecnica">
-      <UniqueIdentifier>{86FF8292-9B76-4B33-824A-5D77B9A0AC47}</UniqueIdentifier>
+      <UniqueIdentifier>{630B0748-5CCF-4587-AD91-277FF3B5BDAD}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\PruebaTecnica\PruebaTecnica.Build.cs">
       <Filter>Source\PruebaTecnica</Filter>
@@ -66,12 +66,15 @@
       <Filter>Source\PruebaTecnica</Filter>
     </ClInclude>
     <Filter Include="Source\PruebaTecnica\Private">
-      <UniqueIdentifier>{66043F41-0960-4225-815A-0EADAB74BC51}</UniqueIdentifier>
+      <UniqueIdentifier>{09BC523E-3A76-4D42-A719-BFE1BA48B96F}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\PruebaTecnica\Private\Enemy.cpp">
       <Filter>Source\PruebaTecnica\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\PruebaTecnica\Private\EnemyController.cpp">
+      <Filter>Source\PruebaTecnica\Private</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\PruebaTecnica\Private\EnemyMelee.cpp">
       <Filter>Source\PruebaTecnica\Private</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\PruebaTecnica\Private\EnemyProjectile.cpp">
@@ -80,8 +83,11 @@
     <ClCompile Include="..\..\Source\PruebaTecnica\Private\EnemyRange.cpp">
       <Filter>Source\PruebaTecnica\Private</Filter>
     </ClCompile>
+    <ClCompile Include="..\..\Source\PruebaTecnica\Private\MainPlayerController.cpp">
+      <Filter>Source\PruebaTecnica\Private</Filter>
+    </ClCompile>
     <Filter Include="Source\PruebaTecnica\Public">
-      <UniqueIdentifier>{3411E30F-94A9-4BB1-8926-EEF558CC3772}</UniqueIdentifier>
+      <UniqueIdentifier>{275E27C1-6108-4680-A7AE-26A67D370680}</UniqueIdentifier>
     </Filter>
     <ClInclude Include="..\..\Source\PruebaTecnica\Public\Enemy.h">
       <Filter>Source\PruebaTecnica\Public</Filter>
@@ -89,10 +95,16 @@
     <ClInclude Include="..\..\Source\PruebaTecnica\Public\EnemyController.h">
       <Filter>Source\PruebaTecnica\Public</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\PruebaTecnica\Public\EnemyMelee.h">
+      <Filter>Source\PruebaTecnica\Public</Filter>
+    </ClInclude>
     <ClInclude Include="..\..\Source\PruebaTecnica\Public\EnemyProjectile.h">
       <Filter>Source\PruebaTecnica\Public</Filter>
     </ClInclude>
     <ClInclude Include="..\..\Source\PruebaTecnica\Public\EnemyRange.h">
+      <Filter>Source\PruebaTecnica\Public</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Source\PruebaTecnica\Public\MainPlayerController.h">
       <Filter>Source\PruebaTecnica\Public</Filter>
     </ClInclude>
   </ItemGroup>

@@ -109,6 +109,10 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentLife_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CurrentLife;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Points_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FIntPropertyParams NewProp_Points;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -288,6 +292,13 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 	};
 #endif
 	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife = { "CurrentLife", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APruebaTecnicaCharacter, CurrentLife), METADATA_PARAMS(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_Points_MetaData[] = {
+		{ "Category", "Points" },
+		{ "ModuleRelativePath", "PruebaTecnicaCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FIntPropertyParams Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_Points = { "Points", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Int, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APruebaTecnicaCharacter, Points), METADATA_PARAMS(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_Points_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_Points_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APruebaTecnicaCharacter_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_Mesh1P,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_FP_Gun,
@@ -306,6 +317,7 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_bUsingMotionControllers,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_MaxLife,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_Points,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APruebaTecnicaCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APruebaTecnicaCharacter>::IsAbstract,
@@ -334,7 +346,7 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APruebaTecnicaCharacter, 694189239);
+	IMPLEMENT_CLASS(APruebaTecnicaCharacter, 1094781771);
 	template<> PRUEBATECNICA_API UClass* StaticClass<APruebaTecnicaCharacter>()
 	{
 		return APruebaTecnicaCharacter::StaticClass();

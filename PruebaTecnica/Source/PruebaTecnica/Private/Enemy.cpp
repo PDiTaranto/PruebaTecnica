@@ -212,7 +212,12 @@ float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AC
 }
 
 void AEnemy::Die()
-{	
+{
+	APruebaTecnicaCharacter* Player = Cast<APruebaTecnicaCharacter>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
+	if(Player)
+	{
+		Player->AddPoints(Points);
+	}
 	Destroy();
 }
 

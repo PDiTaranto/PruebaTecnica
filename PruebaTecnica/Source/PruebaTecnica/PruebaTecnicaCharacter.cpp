@@ -317,6 +317,11 @@ float APruebaTecnicaCharacter::TakeDamage(float DamageAmount, FDamageEvent const
 	return DamageAmount;
 }
 
+void APruebaTecnicaCharacter::AddPoints(int32 PointsToAdd)
+{
+	Points += PointsToAdd;
+}
+
 void APruebaTecnicaCharacter::Die()
 {
 	

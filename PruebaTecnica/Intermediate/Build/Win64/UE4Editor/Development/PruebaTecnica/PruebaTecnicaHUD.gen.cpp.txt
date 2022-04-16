@@ -1,0 +1,10 @@
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Development\PruebaTecnica\Definitions.PruebaTecnica.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Source\PruebaTecnica/PruebaTecnicaHUD.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUD.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/HUDHitBox.h
+E:\Unreal\UE_4.27\Engine\Source\Runtime\Engine\Classes\GameFramework/DebugTextInfo.h
+E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\DebugTextInfo.generated.h
+E:\Unreal\UE_4.27\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\HUD.generated.h
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Inc\PruebaTecnica\PruebaTecnicaHUD.generated.h

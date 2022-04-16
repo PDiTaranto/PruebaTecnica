@@ -49,7 +49,7 @@ class APruebaTecnicaCharacter : public ACharacter
 
 	/** Motion controller (left hand) */
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, meta = (AllowPrivateAccess = "true"))
-	UMotionControllerComponent* L_MotionController;
+	UMotionControllerComponent* L_MotionController;	
 
 public:
 	APruebaTecnicaCharacter();
@@ -91,6 +91,10 @@ public:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Life")
 	float CurrentLife;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Points")
+	int32 Points;
+
 
 protected:
 	
@@ -154,7 +158,7 @@ public:
 
 	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
 
-	
+	void AddPoints(int32 PointsToAdd);	
 
 };
 

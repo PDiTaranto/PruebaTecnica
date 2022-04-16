@@ -1,0 +1,2 @@
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Intermediate\Build\Win64\UE4Editor\Development\PruebaTecnica\Definitions.PruebaTecnica.h
+E:\Prueba Tecnica\PruebaTecnica\PruebaTecnica\Source\PruebaTecnica\PruebaTecnica.h
