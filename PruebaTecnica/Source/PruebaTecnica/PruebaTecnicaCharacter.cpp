@@ -82,12 +82,16 @@ APruebaTecnicaCharacter::APruebaTecnicaCharacter()
 
 	// Uncomment the following line to turn motion controllers on by default:
 	//bUsingMotionControllers = true;
+
+	MaxLife = 100.0f;
 }
 
 void APruebaTecnicaCharacter::BeginPlay()
 {
 	// Call the base class  
 	Super::BeginPlay();
+
+	CurrentLife = MaxLife;
 
 	//Attach gun mesh component to Skeleton, doing it here because the skeleton is not yet created in the constructor
 	FP_Gun->AttachToComponent(Mesh1P, FAttachmentTransformRules(EAttachmentRule::SnapToTarget, true), TEXT("GripPoint"));
@@ -297,4 +301,23 @@ bool APruebaTecnicaCharacter::EnableTouchscreenMovement(class UInputComponent* P
 	}
 	
 	return false;
+}
+
+float APruebaTecnicaCharacter::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent,
+	AController* EventInstigator, AActor* DamageCauser)
+{
+	CurrentLife -= DamageAmount;
+
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, "Vida restante: " + FString::SanitizeFloat(CurrentLife));;
+	if (CurrentLife <= 0)
+	{
+		CurrentLife = 0;
+		Die();
+	}
+	return DamageAmount;
+}
+
+void APruebaTecnicaCharacter::Die()
+{
+	
 }

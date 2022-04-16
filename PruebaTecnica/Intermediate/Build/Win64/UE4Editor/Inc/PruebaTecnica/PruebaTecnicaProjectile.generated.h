@@ -76,7 +76,8 @@ public: \
 
 #define PruebaTecnica_Source_PruebaTecnica_PruebaTecnicaProjectile_h_15_PRIVATE_PROPERTY_OFFSET \
 	FORCEINLINE static uint32 __PPO__CollisionComp() { return STRUCT_OFFSET(APruebaTecnicaProjectile, CollisionComp); } \
-	FORCEINLINE static uint32 __PPO__ProjectileMovement() { return STRUCT_OFFSET(APruebaTecnicaProjectile, ProjectileMovement); }
+	FORCEINLINE static uint32 __PPO__ProjectileMovement() { return STRUCT_OFFSET(APruebaTecnicaProjectile, ProjectileMovement); } \
+	FORCEINLINE static uint32 __PPO__Damage() { return STRUCT_OFFSET(APruebaTecnicaProjectile, Damage); }
 
 
 #define PruebaTecnica_Source_PruebaTecnica_PruebaTecnicaProjectile_h_12_PROLOG

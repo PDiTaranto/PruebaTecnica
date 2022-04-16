@@ -101,6 +101,14 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 #endif
 		static void NewProp_bUsingMotionControllers_SetBit(void* Obj);
 		static const UE4CodeGen_Private::FBoolPropertyParams NewProp_bUsingMotionControllers;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_MaxLife_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_MaxLife;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_CurrentLife_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_CurrentLife;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -266,6 +274,20 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 		((APruebaTecnicaCharacter*)Obj)->bUsingMotionControllers = 1;
 	}
 	const UE4CodeGen_Private::FBoolPropertyParams Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_bUsingMotionControllers = { "bUsingMotionControllers", nullptr, (EPropertyFlags)0x0010000000000005, UE4CodeGen_Private::EPropertyGenFlags::Bool , RF_Public|RF_Transient|RF_MarkAsNative, 1, sizeof(uint8), sizeof(APruebaTecnicaCharacter), &Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_bUsingMotionControllers_SetBit, METADATA_PARAMS(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_bUsingMotionControllers_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_bUsingMotionControllers_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_MaxLife_MetaData[] = {
+		{ "Category", "Life" },
+		{ "ModuleRelativePath", "PruebaTecnicaCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_MaxLife = { "MaxLife", nullptr, (EPropertyFlags)0x0010000000000015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APruebaTecnicaCharacter, MaxLife), METADATA_PARAMS(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_MaxLife_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_MaxLife_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife_MetaData[] = {
+		{ "Category", "Life" },
+		{ "ModuleRelativePath", "PruebaTecnicaCharacter.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife = { "CurrentLife", nullptr, (EPropertyFlags)0x0010000000020015, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APruebaTecnicaCharacter, CurrentLife), METADATA_PARAMS(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APruebaTecnicaCharacter_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_Mesh1P,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_FP_Gun,
@@ -282,6 +304,8 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_FireSound,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_FireAnimation,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_bUsingMotionControllers,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_MaxLife,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaCharacter_Statics::NewProp_CurrentLife,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APruebaTecnicaCharacter_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APruebaTecnicaCharacter>::IsAbstract,
@@ -310,7 +334,7 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaCharacter() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APruebaTecnicaCharacter, 3514557119);
+	IMPLEMENT_CLASS(APruebaTecnicaCharacter, 694189239);
 	template<> PRUEBATECNICA_API UClass* StaticClass<APruebaTecnicaCharacter>()
 	{
 		return APruebaTecnicaCharacter::StaticClass();

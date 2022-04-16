@@ -27,6 +27,8 @@ AEnemy::AEnemy()
 	
 	CombatSphere->SetCollisionResponseToAllChannels(ECollisionResponse::ECR_Ignore);
 	CombatSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Overlap);
+
+	MaxLife = 100.0f;
 	
 }
 
@@ -34,6 +36,8 @@ AEnemy::AEnemy()
 void AEnemy::BeginPlay()
 {
 	Super::BeginPlay();
+
+	CurrentLife = MaxLife;
 
 	AgroSphere->OnComponentBeginOverlap.AddDynamic(
 		this,
@@ -159,7 +163,7 @@ void AEnemy::CombatSphereEndOverlap(UPrimitiveComponent* OverlappedComponent, AA
 
 void AEnemy::Attack()
 {
-	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Attack"));
+	
 }
 
 void AEnemy::TargetOnView()
@@ -167,11 +171,8 @@ void AEnemy::TargetOnView()
 	FVector StartPoint = GetActorLocation() + FVector(0.f, 0.f, 20.f);
 	//get player pawn
 	APruebaTecnicaCharacter* Player = Cast<APruebaTecnicaCharacter>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
-	if(Player == nullptr)
-	{
-		GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Player is null"));
-		return;
-	}
+	if(Player == nullptr) return;
+	
 	FVector EndPoint = Player->GetActorLocation() + FVector(0.f, 0.f, 20.f);
 	FHitResult HitResult;
 	GetWorld()->LineTraceSingleByChannel(HitResult, StartPoint, EndPoint, ECollisionChannel::ECC_Visibility);
@@ -179,7 +180,6 @@ void AEnemy::TargetOnView()
 	{
 		if(HitResult.GetActor() == Player)
 		{
-			GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Player is in view"));
 			EnemyController->GetBlackboardComponent()->SetValueAsBool(
 				TEXT("TargetOnView"),
 				true);
@@ -198,5 +198,21 @@ void AEnemy::TargetOnView()
 			false);
 	}
 	
+}
+
+float AEnemy::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator,
+	AActor* DamageCauser)
+{
+	CurrentLife -= DamageAmount;
+	if(CurrentLife <= 0.f)
+	{
+		Die();
+	}
+	return DamageAmount;
+}
+
+void AEnemy::Die()
+{	
+	Destroy();
 }
 

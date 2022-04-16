@@ -137,6 +137,10 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaProjectile() {}
 		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_ProjectileMovement_MetaData[];
 #endif
 		static const UE4CodeGen_Private::FObjectPropertyParams NewProp_ProjectileMovement;
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam NewProp_Damage_MetaData[];
+#endif
+		static const UE4CodeGen_Private::FFloatPropertyParams NewProp_Damage;
 		static const UE4CodeGen_Private::FPropertyParamsBase* const PropPointers[];
 		static const FCppClassTypeInfoStatic StaticCppClassTypeInfo;
 		static const UE4CodeGen_Private::FClassParams ClassParams;
@@ -175,9 +179,18 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaProjectile() {}
 	};
 #endif
 	const UE4CodeGen_Private::FObjectPropertyParams Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_ProjectileMovement = { "ProjectileMovement", nullptr, (EPropertyFlags)0x00400000000a001d, UE4CodeGen_Private::EPropertyGenFlags::Object, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APruebaTecnicaProjectile, ProjectileMovement), Z_Construct_UClass_UProjectileMovementComponent_NoRegister, METADATA_PARAMS(Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_ProjectileMovement_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_ProjectileMovement_MetaData)) };
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_Damage_MetaData[] = {
+		{ "AllowPrivateAccess", "true" },
+		{ "Category", "Projectile" },
+		{ "ModuleRelativePath", "PruebaTecnicaProjectile.h" },
+	};
+#endif
+	const UE4CodeGen_Private::FFloatPropertyParams Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_Damage = { "Damage", nullptr, (EPropertyFlags)0x0040000000000005, UE4CodeGen_Private::EPropertyGenFlags::Float, RF_Public|RF_Transient|RF_MarkAsNative, 1, STRUCT_OFFSET(APruebaTecnicaProjectile, Damage), METADATA_PARAMS(Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_Damage_MetaData, UE_ARRAY_COUNT(Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_Damage_MetaData)) };
 	const UE4CodeGen_Private::FPropertyParamsBase* const Z_Construct_UClass_APruebaTecnicaProjectile_Statics::PropPointers[] = {
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_CollisionComp,
 		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_ProjectileMovement,
+		(const UE4CodeGen_Private::FPropertyParamsBase*)&Z_Construct_UClass_APruebaTecnicaProjectile_Statics::NewProp_Damage,
 	};
 	const FCppClassTypeInfoStatic Z_Construct_UClass_APruebaTecnicaProjectile_Statics::StaticCppClassTypeInfo = {
 		TCppClassTypeTraits<APruebaTecnicaProjectile>::IsAbstract,
@@ -206,7 +219,7 @@ void EmptyLinkFunctionForGeneratedCodePruebaTecnicaProjectile() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(APruebaTecnicaProjectile, 498423029);
+	IMPLEMENT_CLASS(APruebaTecnicaProjectile, 3447468557);
 	template<> PRUEBATECNICA_API UClass* StaticClass<APruebaTecnicaProjectile>()
 	{
 		return APruebaTecnicaProjectile::StaticClass();

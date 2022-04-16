@@ -84,7 +84,10 @@ public: \
 	FORCEINLINE static uint32 __PPO__PatrolPoint() { return STRUCT_OFFSET(AEnemy, PatrolPoint); } \
 	FORCEINLINE static uint32 __PPO__PatrolPoint2() { return STRUCT_OFFSET(AEnemy, PatrolPoint2); } \
 	FORCEINLINE static uint32 __PPO__AgroSphere() { return STRUCT_OFFSET(AEnemy, AgroSphere); } \
-	FORCEINLINE static uint32 __PPO__CombatSphere() { return STRUCT_OFFSET(AEnemy, CombatSphere); }
+	FORCEINLINE static uint32 __PPO__CombatSphere() { return STRUCT_OFFSET(AEnemy, CombatSphere); } \
+	FORCEINLINE static uint32 __PPO__MaxLife() { return STRUCT_OFFSET(AEnemy, MaxLife); } \
+	FORCEINLINE static uint32 __PPO__CurrentLife() { return STRUCT_OFFSET(AEnemy, CurrentLife); } \
+	FORCEINLINE static uint32 __PPO__Points() { return STRUCT_OFFSET(AEnemy, Points); }
 
 
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_10_PROLOG

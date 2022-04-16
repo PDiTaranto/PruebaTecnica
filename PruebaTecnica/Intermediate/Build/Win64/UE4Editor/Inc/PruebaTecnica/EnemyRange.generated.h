@@ -36,7 +36,7 @@ public: \
 
 #define PruebaTecnica_Source_PruebaTecnica_Public_EnemyRange_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AEnemyRange(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
+	NO_API AEnemyRange(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(AEnemyRange) \
 	DECLARE_VTABLE_PTR_HELPER_CTOR(NO_API, AEnemyRange); \
 	DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(AEnemyRange); \
@@ -48,8 +48,6 @@ public:
 
 
 #define PruebaTecnica_Source_PruebaTecnica_Public_EnemyRange_h_15_ENHANCED_CONSTRUCTORS \
-	/** Standard constructor, called after all reflected properties have been initialized */ \
-	NO_API AEnemyRange() { }; \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API AEnemyRange(AEnemyRange&&); \

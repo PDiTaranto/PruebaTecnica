@@ -33,6 +33,15 @@ protected:
 
 	UPROPERTY(EditAnywhere,BlueprintReadWrite, Category = "Combat", meta = (AllowPrivateAccess = "true"))
 	USphereComponent* CombatSphere;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Life", meta = (AllowPrivateAccess = "true"))
+	float MaxLife;
+
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Life", meta = (AllowPrivateAccess = "true"))
+	float CurrentLife;
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Points", meta = (AllowPrivateAccess = "true"))
+	int32 Points;
 	
 protected:
 	// Called when the game starts or when spawned
@@ -82,6 +91,10 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	virtual void TargetOnView();
+
+	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
+
+	virtual void Die();
 	
 
 	FORCEINLINE UBehaviorTree* GetBehaviorTree() const { return BehaviorTree; }

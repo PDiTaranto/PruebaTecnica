@@ -2,7 +2,14 @@
 
 
 #include "EnemyRange.h"
+#include "EnemyProjectile.h"
 
+
+AEnemyRange::AEnemyRange()
+{
+	FP_MuzzleLocation = CreateDefaultSubobject<USceneComponent>(TEXT("MuzzleLocation"));
+	FP_MuzzleLocation->SetupAttachment(GetRootComponent());
+}
 
 void AEnemyRange::BeginPlay()
 {
@@ -16,5 +23,17 @@ void AEnemyRange::Tick(float DeltaTime)
 
 void AEnemyRange::Attack()
 {
-	Super::Attack();
+	if(ProjectileClass != nullptr)
+	{
+		FVector SpawnLocation = FP_MuzzleLocation->GetComponentLocation();
+		FRotator SpawnRotation = GetActorRotation();
+		AEnemyProjectile* Projectile = GetWorld()->SpawnActor<AEnemyProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+		Projectile->SetOwner(this);
+	}
+}
+
+float AEnemyRange::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator,
+	AActor* DamageCauser)
+{
+	return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 }
