@@ -89,7 +89,7 @@ void EmptyLinkFunctionForGeneratedCodeEnemyMelee() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(AEnemyMelee, 2987110737);
+	IMPLEMENT_CLASS(AEnemyMelee, 3988422676);
 	template<> PRUEBATECNICA_API UClass* StaticClass<AEnemyMelee>()
 	{
 		return AEnemyMelee::StaticClass();

@@ -8,6 +8,7 @@
 #include "Components/InputComponent.h"
 #include "GameFramework/InputSettings.h"
 #include "HeadMountedDisplayFunctionLibrary.h"
+#include "MainPlayerController.h"
 #include "Kismet/GameplayStatics.h"
 #include "MotionControllerComponent.h"
 #include "XRMotionControllerBase.h" // for FXRMotionControllerBase::RightHandSourceId
@@ -84,6 +85,10 @@ APruebaTecnicaCharacter::APruebaTecnicaCharacter()
 	//bUsingMotionControllers = true;
 
 	MaxLife = 100.0f;
+
+	TotalProjectiles = 6;
+
+	RandomVariation = 5.0f;
 }
 
 void APruebaTecnicaCharacter::BeginPlay()
@@ -123,6 +128,7 @@ void APruebaTecnicaCharacter::SetupPlayerInputComponent(class UInputComponent* P
 
 	// Bind fire event
 	PlayerInputComponent->BindAction("Fire", IE_Pressed, this, &APruebaTecnicaCharacter::OnFire);
+	PlayerInputComponent->BindAction("SecondFire", IE_Pressed, this, &APruebaTecnicaCharacter::OnSecondaryFire);
 
 	// Enable touchscreen input
 	EnableTouchscreenMovement(PlayerInputComponent);
@@ -144,30 +150,42 @@ void APruebaTecnicaCharacter::SetupPlayerInputComponent(class UInputComponent* P
 
 void APruebaTecnicaCharacter::OnFire()
 {
-	// try and fire a projectile
+	SpawnProjetiles(1,0);
+}
+
+void APruebaTecnicaCharacter::OnSecondaryFire()
+{
+	SpawnProjetiles(TotalProjectiles, RandomVariation);
+}
+
+void APruebaTecnicaCharacter::SpawnProjetiles(int32 Projectiles, float Variation)
+{
 	if (ProjectileClass != nullptr)
 	{
 		UWorld* const World = GetWorld();
-		if (World != nullptr)
+		for(int i = 0; i < Projectiles; i++)
 		{
-			if (bUsingMotionControllers)
+			if (World != nullptr)
 			{
-				const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
-				const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
-				World->SpawnActor<APruebaTecnicaProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
-			}
-			else
-			{
-				const FRotator SpawnRotation = GetControlRotation();
-				// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
-				const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
+				if (bUsingMotionControllers)
+				{
+					const FRotator SpawnRotation = VR_MuzzleLocation->GetComponentRotation();
+					const FVector SpawnLocation = VR_MuzzleLocation->GetComponentLocation();
+					World->SpawnActor<APruebaTecnicaProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+				}
+				else
+				{
+					const FRotator SpawnRotation = GetControlRotation() + FRotator(FMath::RandRange(-Variation,Variation), FMath::RandRange(-Variation,Variation), 0.f);
+					// MuzzleOffset is in camera space, so transform it to world space before offsetting from the character location to find the final muzzle position
+					const FVector SpawnLocation = ((FP_MuzzleLocation != nullptr) ? FP_MuzzleLocation->GetComponentLocation() : GetActorLocation()) + SpawnRotation.RotateVector(GunOffset);
 
-				//Set Spawn Collision Handling Override
-				FActorSpawnParameters ActorSpawnParams;
-				ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
+					//Set Spawn Collision Handling Override
+					FActorSpawnParameters ActorSpawnParams;
+					ActorSpawnParams.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButDontSpawnIfColliding;
 
-				// spawn the projectile at the muzzle
-				World->SpawnActor<APruebaTecnicaProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+					// spawn the projectile at the muzzle
+					World->SpawnActor<APruebaTecnicaProjectile>(ProjectileClass, SpawnLocation, SpawnRotation, ActorSpawnParams);
+				}
 			}
 		}
 	}
@@ -324,5 +342,10 @@ void APruebaTecnicaCharacter::AddPoints(int32 PointsToAdd)
 
 void APruebaTecnicaCharacter::Die()
 {
-	
+	//Call show game over screen
+	AMainPlayerController* MainPlayerController = Cast<AMainPlayerController>(GetController());
+	if(MainPlayerController)
+	{
+		MainPlayerController->ShowGameoverWidget();
+	}
 }

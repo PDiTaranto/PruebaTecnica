@@ -40,8 +40,16 @@ protected:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Life", meta = (AllowPrivateAccess = "true"))
 	float CurrentLife;
 
-	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Points", meta = (AllowPrivateAccess = "true"))
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Points", meta = (AllowPrivateAccess = "true"))
 	int32 Points;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Combat", meta = (AllowPrivateAccess = "true"))
+	float AttackRate;
+
+	FTimerHandle AttackTimer;
+
+	bool bCanAttack;
+	
 	
 protected:
 	// Called when the game starts or when spawned
@@ -95,6 +103,8 @@ public:
 	virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser) override;
 
 	virtual void Die();
+
+	virtual void RestartAttack();
 	
 
 	FORCEINLINE UBehaviorTree* GetBehaviorTree() const { return BehaviorTree; }

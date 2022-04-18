@@ -30,6 +30,8 @@ protected:
 	virtual void Attack() override;
 
 	virtual float TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator, AActor* DamageCauser) override;
+
+	virtual void RestartAttack() override;
 	
 	
 };

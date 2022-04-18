@@ -95,11 +95,22 @@ public:
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = "Points")
 	int32 Points;
 
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Secondary Attack")
+	int32 TotalProjectiles;
+
+	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Secondary Attack")
+	float RandomVariation;
+
+
 
 protected:
 	
 	/** Fires a projectile. */
 	void OnFire();
+
+	void OnSecondaryFire();
+
+	void SpawnProjetiles(int32 Projectiles, float Variation);
 
 	/** Resets HMD orientation and position in VR. */
 	void OnResetVR();
@@ -134,6 +145,7 @@ protected:
 	void EndTouch(const ETouchIndex::Type FingerIndex, const FVector Location);
 	void TouchUpdate(const ETouchIndex::Type FingerIndex, const FVector Location);
 	TouchData	TouchItem;
+	
 	
 protected:
 	// APawn interface

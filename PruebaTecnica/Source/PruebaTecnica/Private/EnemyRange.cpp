@@ -23,13 +23,18 @@ void AEnemyRange::Tick(float DeltaTime)
 
 void AEnemyRange::Attack()
 {
-	if(ProjectileClass != nullptr)
+	if(bCanAttack)
 	{
-		FVector SpawnLocation = FP_MuzzleLocation->GetComponentLocation();
-		FRotator SpawnRotation = GetActorRotation();
-		AEnemyProjectile* Projectile = GetWorld()->SpawnActor<AEnemyProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
-		Projectile->SetOwner(this);
-	}
+		if(ProjectileClass != nullptr)
+		{
+			FVector SpawnLocation = FP_MuzzleLocation->GetComponentLocation();
+			FRotator SpawnRotation = GetActorRotation();
+			AEnemyProjectile* Projectile = GetWorld()->SpawnActor<AEnemyProjectile>(ProjectileClass, SpawnLocation, SpawnRotation);
+			Projectile->SetOwner(this);
+			bCanAttack = false;
+			GetWorldTimerManager().SetTimer(AttackTimer, this, &AEnemyRange::RestartAttack, AttackRate, false);
+		}
+	}	
 }
 
 float AEnemyRange::TakeDamage(float DamageAmount, FDamageEvent const& DamageEvent, AController* EventInstigator,
@@ -37,3 +42,9 @@ float AEnemyRange::TakeDamage(float DamageAmount, FDamageEvent const& DamageEven
 {
 	return Super::TakeDamage(DamageAmount, DamageEvent, EventInstigator, DamageCauser);
 }
+
+void AEnemyRange::RestartAttack()
+{
+	bCanAttack = true;
+}
+

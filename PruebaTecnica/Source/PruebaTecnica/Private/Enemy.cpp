@@ -29,6 +29,10 @@ AEnemy::AEnemy()
 	CombatSphere->SetCollisionResponseToChannel(ECollisionChannel::ECC_Pawn, ECollisionResponse::ECR_Overlap);
 
 	MaxLife = 100.0f;
+
+	AttackRate = 0.4f;
+	bCanAttack = true;
+	
 	
 }
 
@@ -219,5 +223,10 @@ void AEnemy::Die()
 		Player->AddPoints(Points);
 	}
 	Destroy();
+}
+
+void AEnemy::RestartAttack()
+{
+	bCanAttack = true;
 }
 

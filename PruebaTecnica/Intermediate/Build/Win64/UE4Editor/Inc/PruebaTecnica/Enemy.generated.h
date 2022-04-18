@@ -87,7 +87,8 @@ public: \
 	FORCEINLINE static uint32 __PPO__CombatSphere() { return STRUCT_OFFSET(AEnemy, CombatSphere); } \
 	FORCEINLINE static uint32 __PPO__MaxLife() { return STRUCT_OFFSET(AEnemy, MaxLife); } \
 	FORCEINLINE static uint32 __PPO__CurrentLife() { return STRUCT_OFFSET(AEnemy, CurrentLife); } \
-	FORCEINLINE static uint32 __PPO__Points() { return STRUCT_OFFSET(AEnemy, Points); }
+	FORCEINLINE static uint32 __PPO__Points() { return STRUCT_OFFSET(AEnemy, Points); } \
+	FORCEINLINE static uint32 __PPO__AttackRate() { return STRUCT_OFFSET(AEnemy, AttackRate); }
 
 
 #define PruebaTecnica_Source_PruebaTecnica_Public_Enemy_h_10_PROLOG
