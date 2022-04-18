@@ -17,10 +17,10 @@ void AEnemyMelee::Tick(float DeltaTime)
 
 void AEnemyMelee::Attack()
 {
+	GEngine->AddOnScreenDebugMessage(-1, 5.f, FColor::Red, TEXT("Attack"));
 	APruebaTecnicaCharacter* Player = Cast<APruebaTecnicaCharacter>(UGameplayStatics::GetPlayerCharacter(GetWorld(), 0));
 	if (Player)
 	{
-		//Apply damage using ApplyDamage function
 		UGameplayStatics::ApplyDamage(Player, Damage, Player->GetController(), this, nullptr);
 	}
 	Destroy();
